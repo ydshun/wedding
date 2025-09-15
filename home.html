@@ -3,38 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <title>キーワード入力ページ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   body {
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(to right, #a1c4fd, #c2e9fb);
     margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
   }
   .container {
     text-align: center;
     background: white;
-    padding: 40px;
+    padding: 30px 20px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
   input {
-    padding: 10px;
-    width: 200px;
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
   }
   button {
-    padding: 10px 20px;
-    margin-left: 10px;
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
     border: none;
     border-radius: 6px;
     background-color: #4caf50;
     color: white;
-    font-size: 16px;
     cursor: pointer;
   }
   button:hover {
@@ -51,17 +62,15 @@
 
 <script>
   function goPage() {
-    const key = document.getElementById('keyword').value.toLowerCase();
+    const key = document.getElementById('keyword').value.toLowerCase().trim();
     if(key === 'apple') location.href = 'a.html';
     else if(key === 'banana') location.href = 'b.html';
     else alert('キーワードが違います');
   }
 
-  // Enterキーで送信
   document.getElementById('keyword').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') goPage();
   });
 </script>
 </body>
 </html>
-
