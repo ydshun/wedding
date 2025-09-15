@@ -6,50 +6,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
     margin: 0;
     padding: 20px;
-    box-sizing: border-box;
+    /* 上側に夕日オレンジ少し、下を海の暗めブルー/ターコイズに */
+    background: linear-gradient(to bottom, #ff7e5f 15%, #0d3b66 100%);
   }
   .container {
     text-align: center;
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     padding: 30px 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     width: 100%;
     max-width: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+  /* 船のアイコンを追加（擬似要素） */
+  .container::before {
+    content: "⛴️";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 60px;
+    opacity: 0.2;
   }
   h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    color: #333;
   }
   input {
     width: 100%;
     padding: 14px;
     font-size: 18px;
-    border-radius: 6px;
+    border-radius: 10px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     margin-bottom: 15px;
+    outline: none;
+  }
+  input:focus {
+    border-color: #ff7e5f;
+    box-shadow: 0 0 5px rgba(255,126,95,0.5);
   }
   button {
     width: 100%;
     padding: 14px;
     font-size: 18px;
     border: none;
-    border-radius: 6px;
-    background-color: #4caf50;
+    border-radius: 10px;
+    background-color: #1abc9c; /* 海のターコイズ */
     color: white;
     cursor: pointer;
+    transition: 0.3s;
   }
   button:hover {
-    background-color: #45a049;
+    background-color: #16a085; /* 少し濃いターコイズ */
   }
 </style>
 </head>
