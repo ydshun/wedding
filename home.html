@@ -82,40 +82,38 @@
 <script>
   function goPage() {
     const key = document.getElementById('keyword').value.toLowerCase().trim();
-    /* synayaka ae */
-    if(key === 'キューズ') location.href = 'ae.html';
-    else if(key === 'qws') location.href = 'ae.html';
-    else if(key === 'QWS') location.href = 'ae.html';
-    else if(key === '渋谷') location.href = 'ae.html';
-    /* basket b*/
-    else if(key === '道灌山') location.href = 'b.html';
-    else if(key === 'どうかんやま') location.href = 'b.html';
-    /* ichikawa c*/
-    else if(key === '水色') location.href = 'c.html';
-    else if(key === 'みずいろ') location.href = 'c.html';
-    /* sundai d*/
-    else if(key === '水色') location.href = 'd.html';
-    else if(key === 'みずいろ') location.href = 'd.html';
-    /* daidai f */
-    else if(key === 'しほたん') location.href = 'f.html';
-    else if(key === 'しほ') location.href = 'f.html';
-       /* hongo g */
-    else if(key === '本郷') location.href = 'g.html';
-    else if(key === '本郷三丁目') location.href = 'g.html';
-    else if(key === '本郷３丁目') location.href = 'g.html';
-    else if(key === '本郷3丁目') location.href = 'g.html';
-    /* samurai gk */
-    else if(key === 'バドワイザー') location.href = 'gk.html';
-    else if(key === 'Budweiser') location.href = 'gk.html';
-    else if(key === 'バド') location.href = 'gk.html';
 
+    // キーワードごとの配列
+    const pages = {
+      'ae.html': ['キューズ', 'qws', 'QWS', '渋谷'],
+      'b.html': ['道灌山', 'どうかんやま'],
+      'c.html': ['水色', 'みずいろ'],
+      'd.html': ['', ''], // 空欄のまま
+      'f.html': ['しほたん', 'しほ'],
+      'g.html': ['本郷', '本郷三丁目', '本郷３丁目', '本郷3丁目'],
+      'gk.html': ['バドワイザー', 'Budweiser', 'バド'],
+      'h.html': ['囲碁', 'いご', '碁'],
+      'imo.html': ['オリセン', 'オリンピックセンター', 'おりせん', '国立オリンピック記念青少年総合センター', 'オリンピック記念青少年総合センター', '参宮橋'],
+      'j.html': ['かくれんぼ', '隠れんぼ', 'プール', 'バトミントン', 'バドミントン', '色おに', '色鬼', 'いろおに'],
+      'l.html': ['XX'],
+      'n.html': ['花巻', 'はなまき', '花巻市', 'はなまきし', '岩手', 'いわて', '岩手県']
+    };
 
-    else alert('キーワードが違います');
+    // 配列ごとにチェックして該当ページへ遷移
+    for (const [page, keys] of Object.entries(pages)) {
+      if(keys.map(k => k.toLowerCase()).includes(key)) {
+        location.href = page;
+        return;
+      }
+    }
+
+    alert('キーワードが違います');
   }
 
   document.getElementById('keyword').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') goPage();
   });
 </script>
+
 </body>
 </html>
