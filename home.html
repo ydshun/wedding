@@ -75,17 +75,41 @@
 <div class="container">
   <h2>思い出のキーワードを入れて下さい</h2>
   <h3>ヒント：ドリンク表の裏側</h2>
-  <input id="keyword" placeholder="apple または banana">
+  <input id="keyword" placeholder="最後の鍵">
   <button onclick="goPage()">送信</button>
 </div>
 
 <script>
   function goPage() {
     const key = document.getElementById('keyword').value.toLowerCase().trim();
-    if(key === 'apple') location.href = 'a.html';
+    /* synayaka ae */
+    if(key === 'キューズ') location.href = 'ae.html';
+    else if(key === 'qws') location.href = 'ae.html';
+    else if(key === 'QWS') location.href = 'ae.html';
+    else if(key === '渋谷') location.href = 'ae.html';
+    /* basket b*/
     else if(key === '道灌山') location.href = 'b.html';
     else if(key === 'どうかんやま') location.href = 'b.html';
-    else if(key === 'banana') location.href = 'b.html';
+    /* ichikawa c*/
+    else if(key === '水色') location.href = 'c.html';
+    else if(key === 'みずいろ') location.href = 'c.html';
+    /* sundai d*/
+    else if(key === '水色') location.href = 'd.html';
+    else if(key === 'みずいろ') location.href = 'd.html';
+    /* daidai f */
+    else if(key === 'しほたん') location.href = 'f.html';
+    else if(key === 'しほ') location.href = 'f.html';
+       /* hongo g */
+    else if(key === '本郷') location.href = 'g.html';
+    else if(key === '本郷三丁目') location.href = 'g.html';
+    else if(key === '本郷３丁目') location.href = 'g.html';
+    else if(key === '本郷3丁目') location.href = 'g.html';
+    /* samurai gk */
+    else if(key === 'バドワイザー') location.href = 'gk.html';
+    else if(key === 'Budweiser') location.href = 'gk.html';
+    else if(key === 'バド') location.href = 'gk.html';
+
+
     else alert('キーワードが違います');
   }
 
